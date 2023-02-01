@@ -1,0 +1,20 @@
+<textarea rows="20" cols="43"></textarea>
+<button>Run</button>
+<style>
+    textarea {
+        padding: 10px;
+        resize: none;
+    }
+    button {
+        display: block;
+        cursor: pointer;
+        margin: 20px auto;
+        width: 100px;
+    }
+ </style>
+ <script>
+    document.querySelector('button').onclick = () => {
+        const codeText = document.querySelector('textarea').value;
+        parent.postMessage({ pluginMessage: codeText}, '*');
+    }
+ </script>
